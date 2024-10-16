@@ -1,0 +1,23 @@
+<!-- The header ejs template is included to ensure our CSS and fonts are loaded -->
+<%- include('partials/header') %>
+
+<html>
+    <head>
+        <title> Leaderboard </title>
+    </head>
+    
+    <body>
+        <div class="leaderboard">
+            <h1>Top 10 HighScores</h1>
+            <ul>
+                <% topStreaks.forEach(streak => { %>
+                    <li>
+                        <strong>Score:</strong> <%= streak.correctAnswers %> - <%= streak.date.toDateString() %>
+                    </li>
+                <% }) %>
+            </ul>
+            <a class="btn" href="/">Go to Home</a>
+        </div>
+    </body>
+</html>
+
