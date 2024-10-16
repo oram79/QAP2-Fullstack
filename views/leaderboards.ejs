@@ -12,10 +12,10 @@
             <ul>
                 <% topStreaks.forEach(streak => { %>
                     <li>
-                        <strong>Score:</strong> <%= streak.correctAnswers %> - <%= streak.date.toDateString() %>
+                        <strong>Score:</strong> <%= streak.correctAnswers %> - <%= new Date(streak.date).toLocaleString() %>
                     </li>
                 <% }) %>
-            </ul>
+                </ul>3
             <a class="btn" href="/">Go to Home</a>
         </div>
     </body>
