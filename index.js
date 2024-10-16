@@ -40,6 +40,20 @@ app.get('/quiz', (req, res) => {
     res.render('leaderboards', { topStreaks });
   });
 
+  app.post('/quiz', (req, res) => {
+    const userAnswer = parseFloat(req.body.answer);
+    const isCorrect = userAnswer === currentQuestion.answer;
+  
+    if (isCorrect) {
+      currentStreak++;
+    } else {
+      streaks.push({ correctAnswers: currentStreak, date: new Date() });
+      currentStreak = 0;
+    }
+  
+    res.redirect(isCorrect ? '/quiz' : '/quiz-complete');
+  });
+  
 // Start the server
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
