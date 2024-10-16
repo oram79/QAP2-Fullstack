@@ -14,7 +14,7 @@ function getQuestion() {
 
     const question = `${num1} ${operation} ${num2}`;
 
-    const answer = eval(question).toFixed(2); // Use toFixed for division precision
+    const answer = eval(question).toFixed(2);
 
     return { question, answer: parseFloat(answer) };
   }
