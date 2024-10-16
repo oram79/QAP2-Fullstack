@@ -1,17 +1,21 @@
 <!-- The header ejs template is included to ensure our CSS and fonts are loaded -->
 <%- include('partials/header') %>
-    <link rel="stylesheet" href="/style.css">
-    <div class="home">
-        <h1> Welcome To My Math Quiz </h1>
-        <p> Previous Highscore : <%= lastStreak ? lastStreak.correctAnswers : "No streak yet" %> </p>
-    </div>
-    <div class="button1">
-        <button>
-            <a href="/quiz">Start a new quiz</a>
-        </button>
-    </div>
-    <div class="button2">
-        <button>
-            <a href="/leaderboard">View Leaderboard</a>
-        </button>
-    </div>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+</style>
+
+<link rel="stylesheet" href="/style.css">
+<div class="home">
+    <h1> Welcome To My Math Quiz </h1>
+    <p> Previous Highscore : <%= lastStreak ? lastStreak.correctAnswers : "No streak yet" %> </p>
+</div>
+<div class="button1">
+    <button>
+        <a href="/quiz">Start a new quiz</a>
+    </button>
+</div>
+<div class="button2">
+    <button>
+        <a href="/leaderboard">View Leaderboard</a>
+    </button>
+</div>

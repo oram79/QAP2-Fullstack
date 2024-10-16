@@ -1,16 +1,22 @@
 <!-- The header ejs template is included to ensure our CSS and fonts are loaded -->
 <%- include('partials/header') %>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+</style>
 
+<link rel="stylesheet" href="style.css">
 <html>
     <head>
         <title>Math Quiz</title>
     </head>
-    <body class="quiz">
-        <h1 class="quiz">Current Streak: <%= currentStreak %></h1>
-        <p>What is <%= currentQuestion.question %>?</p>
-        <form action="/quiz" method="POST">
-            <input type="number" step="0.01" name="answer" required>
-            <button type="submit">Submit</button>
-        </form>
+    <body>
+        <div class="quiz">
+            <h1 class="quiz-h">Highscore : <%= currentStreak %></h1>
+            <p>What is <%= currentQuestion.question %>?</p>
+            <form action="/quiz" method="POST">
+                <input type="number" step="0.01" name="answer" required>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
     </body>
 </html>
